@@ -1,0 +1,22 @@
+{
+  "name": "password-strength-react",
+  "version": "1.0.0",
+  "description": "These files are supplementary informations to my <a href=\"http://joecaps.com/blog/2016/08/06/building-a-password-strength-component-in-react/\">blog</a>.", 
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --minimize",
+    "test": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline"
+  },
+  "dependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "uglify-js": "^2.7.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.11.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

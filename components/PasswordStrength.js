@@ -1,85 +1,13 @@
-/*
-    Password Strength Component In React
-    Copyright (c) 2007 - 2016 Joel Capillo (joecaps.com)
-    Version: 1.0.0
-*/
 
-//rules list component
-class RulesList extends React.Component {
-    render() {
-        return (
-            <ul>
-                <li className={this.props.hasNumber}>
-                    At least one number (0-9)
-                </li>
-                <li className={this.props.hasLetter}>
-                    At least one letter (a-z)
-                </li>
-                <li className={this.props.isValidLength}>
-                    At least 6 characters
-                </li>
-                <li className={this.props.noSpecialChar}>
-                    No spaces, forward slashes (/) or double quote marks (")
-                </li>     
-            </ul>
-        )
-    }
-}
-
-//rules meter component
-class RulesMeter extends React.Component {
-    render() {
-        return (
-            <div>
-                <span>{this.props.title}</span>
-                <div className="meter-wrapper">
-                   <div className={this.props.className} style={{width: this.props.meterWidth + '%'}}></div>
-                </div>   
-            </div>
-        )
-    }
-}
-
-//password component
-class Password extends React.Component {  
-    render() {
-        return (
-            <span>
-                <label htmlFor="password">Create Password</label><br/>               
-                <input
-                id="password" 
-                type={this.props.type} 
-                placeholder="Enter password...."               
-                onChange={this.props.onChange} 
-                /> 
-            </span>   
-        )
-    }
-}
-
-//checkbox component
-class CheckBox extends React.Component { 
-    render() {
-        return (
-            <label htmlFor="show-password">
-                &nbsp;            
-                &nbsp;
-                <input 
-                    id="show-password"
-                    name="show-password" 
-                    type="checkbox" 
-                    checked={this.props.showPassword} 
-                    onChange={this.props.onClick}
-                    />
-                  &nbsp;Show Password
-            </label>
-        )
-    }
-}
+import React, { Component } from 'react'
+import Password from './Password'
+import CheckBox from './CheckBox'
+import RulesList from './RulesList'
+import RulesMeter from './RulesMeter'
 
 
 //the main password widget
-class PasswordStrength extends React.Component {    
+class PasswordStrength extends Component {    
     constructor() {
         super();
         this.state = {                        
@@ -166,8 +94,5 @@ class PasswordStrength extends React.Component {
     }
 }
 
+export default PasswordStrength
 
-ReactDOM.render(
-  <PasswordStrength/>,
-  document.getElementById('app')
-)
