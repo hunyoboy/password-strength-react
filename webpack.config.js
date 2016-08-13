@@ -1,5 +1,7 @@
 var path = require("path"),
 webpack = require("webpack"),
+glob = require("glob"),
+test_folder = "./components/tests/",
 minimize = process.argv.indexOf('--minimize') !== -1,
 plugins = [];
 
@@ -10,7 +12,7 @@ if (minimize) {
 module.exports = { 
   devtool: 'inline-source-map',
   entry: {
-    test: ["./test/PasswordStrengthSpec.js"],
+    test: glob.sync("./components/tests/*spec.js"),
     build: ["./client/client.js"]
   },
   output: { 
